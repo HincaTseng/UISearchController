@@ -64,16 +64,15 @@ static NSString *const idinifier = @"cell";
     self.searchVC.searchBar.placeholder = @"搜索";
     self.searchVC.searchBar.returnKeyType = UIReturnKeyDone;
     [self.searchVC.searchBar sizeToFit];
-//    self.myTableView.tableHeaderView = self.searchVC.searchBar;
     self.definesPresentationContext = YES;
- 
-    //
+//    self.myTableView.tableHeaderView = self.searchVC.searchBar;
+//
     if (@available(iOS 11.0, *)) {
         self.navigationItem.searchController = self.searchVC;
         self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
         self.navigationController.navigationBar.prefersLargeTitles = YES;
     } else {
-          self.myTableView.tableHeaderView = self.searchVC.searchBar;//只用tableHeaderView时，搜索的tab cell高度 下移。
+          self.myTableView.tableHeaderView = self.searchVC.searchBar;
     }
     
 

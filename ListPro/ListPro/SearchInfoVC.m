@@ -27,13 +27,14 @@ static NSString *const idinifier = @"cell";
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     self.myTableView.tableFooterView = [UIView new];
-
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.modalPresentationCapturesStatusBarAppearance = NO;
+    
     if (@available(iOS 11.0, *)) {
-        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.myTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
-        
-        // Fallback on earlier versions
-        
+        self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
 
